@@ -11,11 +11,11 @@ const ROCK = 'rock';
 const PAPER = 'paper';
 const SCISSORS = 'scissors';
 
-const YourMove = ({ callback }) => {
+const YourMove = ({ callback, ...props }) => {
 	const [chosenButton, setChosenButton] = useState();
 
 	return (
-		<Section title="Your move" className="section your-move">
+		<Section {...props} title="Your move">
 			<ButtonContainer>
 				<TabButton
 					className="button button-game"
