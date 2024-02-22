@@ -18,19 +18,19 @@ function App() {
 					<h2 className="section__heading">Your move</h2>
 					<menu>
 						<li>
-							<button className="button">
+							<button className="button button-game">
 								<img src={rockImg} alt="" />
 								Rock
 							</button>
 						</li>
 						<li>
-							<button className="button">
+							<button className="button button-game">
 								<img src={paperImg} alt="" />
 								Paper
 							</button>
 						</li>
 						<li>
-							<button className="button">
+							<button className="button button-game">
 								<img src={scissorsImg} alt="" />
 								Scissors
 							</button>
@@ -43,10 +43,10 @@ function App() {
 					<div className="players-container">
 						<div className="player-box">
 							<div className="player-profile">
-								<div class="player-image">
+								<div className="player-image">
 									<img src={userImg} alt="" />
 								</div>
-								<div class = "player-stats">
+								<div className="player-stats">
 									<p>0</p>
 									<p>You</p>
 								</div>
