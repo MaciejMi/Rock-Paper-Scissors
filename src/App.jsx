@@ -8,25 +8,27 @@ const FIGURES = ['rock', 'paper', 'scissors'];
 
 function App() {
 	const [round, setRound] = useState(0);
-	const [playerPoints, setPlayerPoints] = useState(0);
-	const [computerPoints, setComputerPoints] = useState(0);
-	const [playerChoose, setPlayerChoose] = useState('question');
-	const [computerChoose, setComputerChoose] = useState('question');
+
+	const [playerData, setPlayerData] = useState({ points: 0, choose: 'question' });
+	const [computerData, setComputerData] = useState({ points: 0, choose: 'question' });
 
 	const playHandler = playerChosen => {
 		const playerChose = playerChosen;
 		const computerChose = FIGURES[Math.floor(Math.random() * 3)];
+
+		let playerPoints = playerData.points,
+			computerPoints = computerData.points;
 		if (
 			(playerChose === 'rock' && computerChose === 'scissors') ||
 			(playerChose === 'paper' && computerChose === 'rock') ||
 			(playerChose === 'scissors' && computerChose === 'paper')
 		) {
-			setPlayerPoints(playerPoints + 1);
+			playerPoints = playerData.points + 1;
 		} else if (!(playerChose === computerChose)) {
-			setComputerPoints(computerPoints + 1);
+			computerPoints = computerData.points + 1;
 		}
-		setPlayerChoose(playerChose);
-		setComputerChoose(computerChose);
+		setPlayerData({ points: playerPoints, choose: playerChose });
+		setComputerData({ points: computerPoints, choose: computerChose });
 		setRound(round + 1);
 	};
 
@@ -37,10 +39,10 @@ function App() {
 				<YourMove className="section your-move" callback={playHandler} />
 				<Score
 					className="section score"
-					playerPoints={playerPoints}
-					computerPoints={computerPoints}
-					playerFigure={playerChoose}
-					computerFigure={computerChoose}
+					playerPoints={playerData.points}
+					computerPoints={computerData.points}
+					playerFigure={playerData.choose}
+					computerFigure={computerData.choose}
 				/>
 			</main>
 		</>
