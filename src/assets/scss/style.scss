@@ -37,8 +37,13 @@ body {
 	gap: 20px;
 }
 
-.active {
-	background-color: #e6191a;
+#active {
+	background-color: #9c0b0b;
+}
+
+#disabled {
+	background-color: #8f8f8f;
+	cursor: not-allowed;
 }
 
 .button {

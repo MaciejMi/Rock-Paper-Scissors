@@ -4,11 +4,15 @@ import Score from './components/Score';
 import './assets/scss/style.scss';
 
 function App() {
+	const playHandler = playerChose => {
+		console.log(13);
+	};
+
 	return (
 		<>
 			<Header title="Rock Paper Scissors" description="Round 1" className="header" />
-			<main className="main">
-				<YourMove />
+			<main>
+				<YourMove callback={playHandler} />
 				<Score />
 			</main>
 		</>
