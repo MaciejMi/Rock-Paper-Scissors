@@ -37,12 +37,17 @@ body {
 	gap: 20px;
 }
 
+.active {
+	background-color: #e6191a;
+}
+
 .button {
 	padding: 5px 10px;
 	background: none;
 	border: 1px solid transparent;
 	color: #ffffff;
 	border-radius: 10px;
+	transition: background-color 0.3s;
 	cursor: pointer;
 }
 
@@ -55,6 +60,10 @@ body {
 	img {
 		width: 30px;
 	}
+
+	&:hover {
+		background-color: #291d1f;
+	}
 }
 
 .button-play {
@@ -62,11 +71,15 @@ body {
 	width: 100%;
 	background-color: #e6191a;
 	max-width: 400px;
+	&:hover {
+		background-color: #6d1313;
+	}
 }
 
 .your-move {
 	menu {
 		display: flex;
+		justify-content: center;
 		gap: 10px;
 		max-width: 400px;
 		width: 100%;
